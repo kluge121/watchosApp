@@ -118,6 +118,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9B87D4729AB65B100460AB2 /* Build configuration list for PBXNativeTarget "watchosApp Watch App" */;
 			buildPhases = (
+				A9B87D4E29AB675A00460AB2 /* ShellScript */,
 				A9B87D3329AB65B000460AB2 /* Sources */,
 				A9B87D3429AB65B000460AB2 /* Frameworks */,
 				A9B87D3529AB65B000460AB2 /* Resources */,
@@ -186,6 +187,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9B87D4E29AB675A00460AB2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9B87D3329AB65B000460AB2 /* Sources */ = {
@@ -326,6 +347,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchosApp Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = watchosApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -335,6 +357,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					shared,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = benny.app.watchosApp.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -355,6 +382,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchosApp Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = watchosApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -364,6 +392,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					shared,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = benny.app.watchosApp.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
