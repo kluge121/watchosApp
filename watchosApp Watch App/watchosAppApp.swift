@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import shared
 
 @main
 struct watchosApp_Watch_AppApp: App {
+    
+    init() {
+        startKoin()
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
